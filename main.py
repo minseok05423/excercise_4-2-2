@@ -6,6 +6,7 @@ from ship import Ship
 from rectangle import Rect
 from pygame.sprite import Group
 from gamestat import Gamestat
+from button import Button
 
 def run_game():
     pygame.init()
@@ -13,15 +14,19 @@ def run_game():
     screen = pygame.display.set_mode((user_settings.screen_width, user_settings.screen_height))
     pygame.display.set_caption('practice')
 
+    msg = "START"
+
     ship = Ship(screen)
     rect_obj = Rect(user_settings, screen)
     bullets = Group()
-    stat = Gamestat()
+    fin_bullet = Group()
+    stat = Gamestat(ship, rect_obj)
+    button = Button(screen, msg)
 
     while True:
-        f.check_events(user_settings, screen, stat, ship, rect_obj, bullets)
-        stat.check_shots()
-        ship.check_flags(user_settings)
-        f.update_screen(user_settings, screen, stat, ship, rect_obj, bullets)
+        f.check_events(user_settings, screen, stat, button, ship, rect_obj, bullets, fin_bullet)
+        if stat.game_active:
+            ship.check_flags(user_settings)
+            f.update_screen(user_settings, screen, stat, button, ship, rect_obj, bullets, fin_bullet)
 
 run_game()

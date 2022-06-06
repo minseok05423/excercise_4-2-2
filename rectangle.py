@@ -14,10 +14,12 @@ class Rect(Sprite):
         self.rect.centery = self.screen_rect.centery
         self.rect.x = 50
 
+        self.y = float(self.rect.y)
         self.move = self.user_settings.rect_move_speed
 
     def update(self):
-        self.rect.y += self.move
+        self.y += self.move
+        self.rect.y = self.y
         self.check_edges()
         self.draw_rect()
 
@@ -35,5 +37,3 @@ class Rect(Sprite):
 
     def draw_rect(self):
         pygame.draw.rect(self.screen, self.user_settings.rect_color, self.rect)
-
-

@@ -26,3 +26,4 @@ class Ship():
 
     def blit_me(self):
         self.screen.blit(self.image, self.image_rect)
+
