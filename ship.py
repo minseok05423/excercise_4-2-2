@@ -17,6 +17,8 @@ class Ship():
 
         self.rect = float(self.image_rect.y)
 
+        self.startRectY = self.rect
+
     def check_flags(self, user_settings):
         if self.moving_up and self.image_rect.top >= 0:
             self.rect -= user_settings.ship_speed

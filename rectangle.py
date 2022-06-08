@@ -15,6 +15,7 @@ class Rect(Sprite):
         self.rect.x = 50
 
         self.y = float(self.rect.y)
+        self.startRectY = self.y
         self.move = self.user_settings.rect_move_speed
 
     def update(self):

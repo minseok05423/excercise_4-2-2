@@ -5,9 +5,14 @@ class Gamestat():
 
         self.shots_hit = 0
         self.shots_left = 3
+
         self.win = False
         self.lose = False
         self.game_active = True
+
+        self.scores = {"shots hit": self.shots_hit,
+                       "shots left": self.shots_left,
+                       }
 
     def check_stats(self):
         if self.lose or self.win:
