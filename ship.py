@@ -1,10 +1,12 @@
 import pygame
 
+import load_image as l
+
 class Ship():
     def __init__(self, screen):
         self.screen = screen
 
-        b_image = pygame.image.load("images/ship.bmp")
+        b_image = l.loadify("images/ship.bmp")
         self.image = pygame.transform.rotate(b_image, 90)
         self.image_rect = self.image.get_rect()
         self.screen_rect = self.screen.get_rect()

@@ -25,8 +25,9 @@ def run_game():
     button = Button(screen, msg)
     scoreboard = Scoreboard(user_settings, screen, stat)
 
+
     while True:
-        f.check_events(user_settings, screen, stat, button, ship, rect_obj, bullets, fin_bullet)
+        f.check_events(user_settings, screen, stat, button, scoreboard, ship, rect_obj, bullets, fin_bullet)
         if stat.game_active:
             ship.check_flags(user_settings)
             f.update_screen(user_settings, screen, stat, button, scoreboard, ship, rect_obj, bullets, fin_bullet)

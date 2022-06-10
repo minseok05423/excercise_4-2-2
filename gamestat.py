@@ -10,9 +10,12 @@ class Gamestat():
         self.lose = False
         self.game_active = True
 
-        self.scores = {"shots hit": self.shots_hit,
-                       "shots left": self.shots_left,
-                       }
+        self.scores = {}
+        self.update_score()
+
+    def update_score(self):
+        self.scores["shots hit"] = self.shots_hit
+        self.scores["shots left"] = self.shots_left
 
     def check_stats(self):
         if self.lose or self.win:

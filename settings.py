@@ -11,7 +11,7 @@ class Settings():
         self.rect_width = 50
         self.rect_height = 50
         self.rect_color = (1, 1, 1)
-        self.rect_move_speed = 0.5
+        self.rect_move_speed = 0.1
 
         # set bullet settings
         self.bullet_width = 30
